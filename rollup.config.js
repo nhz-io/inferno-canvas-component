@@ -5,11 +5,11 @@ import cleanup from 'rollup-plugin-cleanup'
 
 export default {
     format: 'cjs',
-    entry: 'src/react-canvas-component.jsx',
-    dest: 'dist/react-canvas-component.js',
+    entry: 'src/inferno-canvas-component.js',
+    dest: 'dist/inferno-canvas-component.js',
     external: [
-        'react',
-        'react-dom',
+        'inferno',
+        'inferno-component',
     ],
     interop: false,
     plugins: [
@@ -21,11 +21,11 @@ export default {
             ],
         }),
         jsx({
-            factory: 'React.createElement',
+            factory: 'Inferno.createElement',
         }),
         esformatter({
             indent: {
-                value: '  ',
+                value: '    ',
             },
             lineBreak: {
                 before: {
