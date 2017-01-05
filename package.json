@@ -34,9 +34,9 @@
   "main": "dist/inferno-canvas-component.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --watch --inline --open",
-    "dist": "eslint --fix . && rollup -c rollup.config.js",
-    "lint": "xo",
+    "start": "BABEL_ENV=development webpack-dev-server --watch --inline --open",
+    "dist": "BABEL_ENV=production eslint --fix . && rollup -c rollup.config.js",
+    "lint": "eslint --fix .",
     "prepublish": "npm run dist"
   },
   "license": "MIT",
@@ -72,30 +72,6 @@
   "peerDependencies": {
     "inferno": "^1.0.7",
     "inferno-component": "^1.0.6"
-  },
-  "xo": {
-    "esnext": true,
-    "space": 4,
-    "semicolon": false,
-    "extends": "xo-react",
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-      "comma-dangle": [
-        1,
-        "always-multiline"
-      ],
-      "react/no-unused-prop-types": [
-        1
-      ],
-      "react/no-string-refs": [
-        1
-      ],
-      "no-unused-vars": [
-        1
-      ]
-    }
   },
   "pre-push": "lint"
 }
