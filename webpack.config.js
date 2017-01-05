@@ -2,8 +2,9 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const port = 9000
+
 module.exports = {
-    xo: require('./package.json').xo,
     devtool: 'eval-source-map',
     resolve: {
         alias: {
@@ -11,37 +12,33 @@ module.exports = {
         },
     },
     entry: [
-        `webpack-dev-server/client?http://localhost:9000`,
+        `webpack-dev-server/client?http://localhost:${port}`,
         'webpack/hot/only-dev-server',
-        path.resolve(__dirname, 'dev/main.jsx'),
+        path.resolve(__dirname, 'dev/main.js'),
     ],
     module: {
         preLoaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'xo-loader',
+                loader: 'eslint-loader',
                 exclude: /node_modules/,
             },
         ],
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'react-hot',
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.jsx?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
                     presets: [
-                        'react',
+                        'inferno-app',
                     ],
                     plugins: [
                         'transform-inline-imports-commonjs',
                         'transform-class-properties',
                         'transform-object-rest-spread',
                     ],
+                    env: 'development',
                 },
             },
             {
@@ -69,6 +66,6 @@ module.exports = {
         inline: true,
         progress: true,
         host: 'localhost',
-        port: 9000,
+        port,
     },
 }
