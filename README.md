@@ -1,4 +1,4 @@
-# react-canvas-component
+# inferno-canvas-component
 
 [![Build Status][travis-image]][travis-url]
 [![NPM][npm-image]][npm-url]
@@ -6,15 +6,15 @@
 
 ## Install
 ```
-npm install --save react-canvas-component
+npm install --save inferno-canvas-component
 ```
 
 ## Usage
 
 ```javascript
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Canvas from 'react-canvas-component'
+import Inferno from 'inferno'
+import Component from 'inferno-component'
+import Canvas from 'inferno-canvas-component'
 
 function drawCanvas({ctx, time}) {
     const {width, height} = ctx.canvas
@@ -27,19 +27,19 @@ function drawCanvas({ctx, time}) {
     ctx.restore()
 }
 
-class App extends React.Component {
+class App extends Component {
     render() {
         return <Canvas draw={drawCanvas} width={400} height={400} realtime/>
     }
 }
 
-ReactDOM.render(<App/>, document.body)
+Inferno.render(<App/>, document.body)
 ```
 
 ## Build
 ```
-git clone https://github.com/nhz-io/react-canvas-component.git
-cd react-canvas-component
+git clone https://github.com/nhz-io/inferno-canvas-component.git
+cd inferno-canvas-component
 npm install
 npm start
 ...
@@ -56,11 +56,11 @@ npm run dist
 
 ### 0.1.1
 
-[travis-image]: https://travis-ci.org/nhz-io/react-canvas-component.svg
-[travis-url]: https://travis-ci.org/nhz-io/react-canvas-component
+[travis-image]: https://travis-ci.org/nhz-io/inferno-canvas-component.svg
+[travis-url]: https://travis-ci.org/nhz-io/inferno-canvas-component
 
-[npm-image]: https://img.shields.io/npm/v/react-canvas-component.svg?style=flat
-[npm-url]: https://www.npmjs.com/package/react-canvas-component
+[npm-image]: https://img.shields.io/npm/v/inferno-canvas-component.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/inferno-canvas-component
 
-[bithound-image]: https://www.bithound.io/github/nhz-io/react-canvas-component/badges/code.svg
-[bithound-url]: https://www.bithound.io/github/nhz-io/react-canvas-component
+[bithound-image]: https://www.bithound.io/github/nhz-io/inferno-canvas-component/badges/code.svg
+[bithound-url]: https://www.bithound.io/github/nhz-io/inferno-canvas-component
