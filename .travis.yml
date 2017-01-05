@@ -11,4 +11,4 @@ deploy:
   on:
     tags: true
     branch: master
-    repo: nhz-io/react-canvas-component
+    repo: nhz-io/inferno-canvas-component
