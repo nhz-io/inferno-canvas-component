@@ -1,6 +1,5 @@
 /* global requestAnimationFrame */
 
-import Inferno from 'inferno' // eslint-disable-line no-unused-vars
 import Component from 'inferno-component'
 
 export default class InfernoCanvasComponent extends Component {

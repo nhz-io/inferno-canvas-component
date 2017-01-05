@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, no-magic-numbers */
 /* global window */
 
-import Inferno from 'inferno' // eslint-disable-line no-unused-vars
 import Component from 'inferno-component'
 import Canvas from 'src/inferno-canvas-component.js'
 

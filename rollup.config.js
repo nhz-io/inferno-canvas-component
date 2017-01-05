@@ -2,6 +2,7 @@ import jsx from 'rollup-plugin-jsx'
 import babel from 'rollup-plugin-babel'
 import esformatter from 'rollup-plugin-esformatter'
 import cleanup from 'rollup-plugin-cleanup'
+import inject from 'rollup-plugin-inject'
 
 export default {
     format: 'cjs',
@@ -9,7 +10,9 @@ export default {
     dest: 'dist/inferno-canvas-component.js',
     external: [
         'inferno',
+        'inferno/dist/inferno-create-element.node',
         'inferno-component',
+
     ],
     interop: false,
     plugins: [
@@ -20,8 +23,15 @@ export default {
                 'transform-object-rest-spread',
             ],
         }),
+
         jsx({
-            factory: 'Inferno.createElement',
+            factory: 'createElement',
+        }),
+        inject({
+            createElement: 'inferno/dist/create-element',
+            modules: {
+                createElement: 'inferno/dist/inferno-create-element.node',
+            },
         }),
         esformatter({
             indent: {

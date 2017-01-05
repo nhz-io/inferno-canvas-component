@@ -58,6 +58,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
         }),
+        new webpack.ProvidePlugin({
+            Inferno: 'inferno',
+        }),
     ],
     devServer: {
         colors: true,
