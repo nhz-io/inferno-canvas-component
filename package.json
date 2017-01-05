@@ -1,15 +1,15 @@
 {
-  "name": "react-canvas-component",
+  "name": "inferno-canvas-component",
   "version": "0.1.1",
-  "description": "React Canvas Component",
+  "description": "Inferno Canvas Component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nhz-io/react-canvas-component.git"
+    "url": "https://github.com/nhz-io/inferno-canvas-component.git"
   },
   "bugs": {
-    "url": "https://github.com/nhz-io/react-canvas-component/issues"
+    "url": "https://github.com/nhz-io/inferno-canvas-component/issues"
   },
-  "homepage": "https://github.com/nhz-io/react-canvas-component",
+  "homepage": "https://github.com/nhz-io/inferno-canvas-component",
   "author": "Ishi Ruy <dev@nhz.io>",
   "contributors": [
     {
@@ -26,12 +26,12 @@
   "keywords": [
     "nhz-io",
     "nhz.io",
-    "react",
+    "inferno",
     "component",
     "canvas",
-    "react-canvas-component"
+    "inferno-canvas-component"
   ],
-  "main": "dist/react-canvas-component.js",
+  "main": "dist/inferno-canvas-component.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --watch --inline --open",
