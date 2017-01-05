@@ -1,16 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-magic-numbers */
 /* global window */
 
-import React from 'react'
-import Canvas from 'src/react-canvas-component.jsx'
+import Inferno from 'inferno' // eslint-disable-line no-unused-vars
+import Component from 'inferno-component'
+import Canvas from 'src/inferno-canvas-component.js'
 
-function drawBackground({ctx, delta, time}) {
+function drawBackground({ctx, delta, time}) { // eslint-disable-line no-unused-vars
     const {width, height} = ctx.canvas
     ctx.fillStyle = 'gray'
     ctx.fillRect(0, 0, width, height)
 }
 
-function drawLeft({ctx, delta, time}) {
+function drawLeft({ctx, delta, time}) { // eslint-disable-line no-unused-vars
     const {width, height} = ctx.canvas
     ctx.save()
     ctx.translate(width / 3, height / 3)
@@ -20,7 +21,7 @@ function drawLeft({ctx, delta, time}) {
     ctx.restore()
 }
 
-function drawRight({ctx, delta, time}) {
+function drawRight({ctx, delta, time}) { // eslint-disable-line no-unused-vars
     const {width, height} = ctx.canvas
     ctx.save()
     ctx.translate(width - (width / 5), height - (height / 5))
@@ -30,7 +31,7 @@ function drawRight({ctx, delta, time}) {
     ctx.restore()
 }
 
-export default class TestWrapper extends React.Component {
+export default class TestWrapper extends Component {
 
     constructor(props) {
         super(props)
@@ -61,6 +62,6 @@ export default class TestWrapper extends React.Component {
                     <Canvas draw={drawRight}/>
                 </Canvas>
             </div>
-    )
+        )
     }
 }
