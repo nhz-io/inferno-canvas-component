@@ -14,7 +14,7 @@ export default {
         'inferno-component',
 
     ],
-    interop: false,
+    interop: true,
     plugins: [
         babel({
             plugins: [

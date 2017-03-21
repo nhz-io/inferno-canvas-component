@@ -1,4 +1,6 @@
 # History
+## 0.1.4
+* re-enable rollup interop
 
 ## 0.1.3
 * upgraded sass and rollup
